@@ -44,7 +44,7 @@ with st.container():
 
     st.divider()
 
-    st.page_link(label='Save / Download',
+    st.page_link(label='Save / Download Simulation',
                  page='views/save.py')
 
 
