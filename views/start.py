@@ -74,6 +74,7 @@ selection = top_level()
 if selection is not None:
     # If selection is 'New Simulation'
     if selection == 0:
+        st.subheader('Define Base Budget Model')
         year = year_selection()
         if year:
             budget_type = budget_type(year)
