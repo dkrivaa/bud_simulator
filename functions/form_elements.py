@@ -233,7 +233,7 @@ def display_with_delete():
         st.write(row['Takana'])
         st.metric(label='Budget',
                   value=f'{row['Budget']:,.0f}')
-        st.write(f'{row['Budget']:,.0f}')
+        # st.write(f'{row['Budget']:,.0f}')
         if st.button(f"Delete", key=f"delete_{idx}"):
             delete_row(idx)
             st.rerun()
