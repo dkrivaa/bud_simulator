@@ -24,13 +24,9 @@ with st.container():
     if action == 0 or action == 1:
         # User inputs
         name = action_name()
-        col1, col2, col3 = st.columns(3)
-        with col1:
-            op_manpower = add_manpower('Operational Manpower')
-        with col2:
-            admin_manpower = add_manpower('Administrative Manpower')
-        with col3:
-            students = add_manpower('Students')
+        op_manpower = add_manpower('Operational Manpower')
+        admin_manpower = add_manpower('Administrative Manpower')
+        students = add_manpower('Students')
         st.divider()
 
         if op_manpower != 0 or admin_manpower != 0 or students != 0:
@@ -40,13 +36,9 @@ with st.container():
             budget_imp = total_budget(new_df) - total_budget(st.session_state['df'])
             manpower_imp = total_manpower(new_df) - total_manpower(st.session_state['df'])
 
-            col1, col2, col3 = st.columns(3)
-            with col1:
-                budget_impact(new_df)
-            with col2:
-                manpower_impact(new_df)
-            with col3:
-                investments(investment)
+            budget_impact(new_df)
+            manpower_impact(new_df)
+            investments(investment)
 
             st.divider()
 
@@ -75,11 +67,8 @@ with st.container():
         program_dataframe()
         program_df = st.session_state['program_df']
 
-        col1, col2 = st.columns(2, vertical_alignment='bottom')
-        with col1:
-            name = action_name()
-        with col2:
-            add_budget_to_program = st.button('Add Budget Row to Program')
+        name = action_name()
+        add_budget_to_program = st.button('Add Budget Row to Program')
 
         st.divider()
 
