@@ -42,5 +42,9 @@ with st.container():
         st.page_link(label=':orange[Actions implemented] - Press here',
                      page='views/actions/summary.py')
 
+    st.divider()
+
+    st.page_link(label='Save / Download',
+                 page='views/save.py')
 
 
