@@ -39,7 +39,7 @@ with st.container():
             st.switch_page('views/actions/wage_policies.py')
 
     if st.session_state['actions']:
-        st.page_link(label=':orange[Actions implemented - ]:orange[Press] here',
+        st.page_link(label=':orange[Actions implemented] - Press here',
                      page='views/actions/summary.py')
 
 
