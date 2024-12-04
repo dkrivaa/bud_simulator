@@ -175,7 +175,6 @@ def add_manpower(manpower_type):
                            key=f'{manpower_type}')
 
 
-
 # Display budget impact
 def budget_impact(df):
     st.metric(label='Annual Budget Impact',
@@ -287,14 +286,15 @@ def action_summary(action_type):
                 if d['action'] != 2:
                     st.metric(label='Operational Manpower',
                               value=f'{d['op_manpower']:,.1f}')
-                    st.metric(label='Annual Budget Impact',
-                              value=f'{d['budget_impact']:,.0f}')
                     st.metric(label='Administrative Manpower',
                               value=f'{d['admin_manpower']:,.1f}')
-                    st.metric(label='Manpower Impact',
-                              value=f'{d['manpower_impact']:,.1f}')
                     st.metric(label='Students',
                               value=f'{d['students']:,.1f}')
+                    st.divider()
+                    st.metric(label='Annual Budget Impact',
+                              value=f'{d['budget_impact']:,.0f}')
+                    st.metric(label='Manpower Impact',
+                              value=f'{d['manpower_impact']:,.1f}')
                     st.metric(label='Investment',
                               value=f'{d['investment']:,.0f}')
                     st.divider()
