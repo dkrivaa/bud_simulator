@@ -44,32 +44,26 @@ def budget_model():
 def model_budget_summary():
     df_original = st.session_state['df_original']
     st.subheader('Model Summary')
-    col1, col2, col3 = st.columns(3)
-    with col1:
-        st.metric(label='Budget - Total',
-                  value=f'{total_budget(df_original):,.0f}',
-                  )
-    with col2:
-        st.metric(label='Manpower - Total',
-                  value=f'{total_manpower(df_original):,.1f}',
-                  )
+    st.metric(label='Budget - Total',
+              value=f'{total_budget(df_original):,.0f}',
+              )
+    st.metric(label='Manpower - Total',
+              value=f'{total_manpower(df_original):,.1f}',
+              )
 
 
 # Display summary of simulation budget - total budget and total manpower
 def simulated_budget_summary():
     df = st.session_state['df']
     st.subheader(':orange[Simulated Budget Summary]')
-    col1, col2, col3 = st.columns(3)
-    with col1:
-        st.metric(label='Budget - Total',
-                  value=f'{total_budget(df):,.0f}',
-                  delta=f'{total_budget(df) - total_budget(st.session_state['df_original']):,.0f}',
-                  )
-    with col2:
-        st.metric(label='Manpower - Total',
-                  value=f'{total_manpower(df):,.1f}',
-                  delta=f'{total_manpower(df) - total_manpower(st.session_state['df_original']):,.1f}',
-                  )
+    st.metric(label='Budget - Total',
+              value=f'{total_budget(df):,.0f}',
+              delta=f'{total_budget(df) - total_budget(st.session_state['df_original']):,.0f}',
+              )
+    st.metric(label='Manpower - Total',
+              value=f'{total_manpower(df):,.1f}',
+              delta=f'{total_manpower(df) - total_manpower(st.session_state['df_original']):,.1f}',
+              )
 
 
 # Selection of specific action type action to perform
@@ -237,15 +231,11 @@ def display_with_delete():
         st.session_state['program_df'] = st.session_state['program_df'].drop(index).reset_index(drop=True)
 
     for idx, row in st.session_state['program_df'].iterrows():
-        col1, col2, col3, col4 = st.columns([3, 1, 1, 3], vertical_alignment='center')
-        with col1:
-            st.write(row['Takana'])
-        with col2:
-            st.write(f'{row['Budget']:,.0f}')
-        with col3:
-            if st.button(f"Delete", key=f"delete_{idx}"):
-                delete_row(idx)
-                st.rerun()
+        st.write(row['Takana'])
+        st.write(f'{row['Budget']:,.0f}')
+        if st.button(f"Delete", key=f"delete_{idx}"):
+            delete_row(idx)
+            st.rerun()
     st.divider()
     st.metric(label='Total Budget',
               value=f'{st.session_state['program_df']['Budget'].sum():,.0f}')
@@ -261,16 +251,12 @@ def action_summary(action_type):
         with st.expander(f'Action - :blue[{d['name']}]'):
             # If quick measures or wage policies
             if action_type == 0 or action_type == 2:
-                col1, col2, col3 = st.columns(3, vertical_alignment='bottom')
-                with col1:
-                    st.metric(label='Percent',
-                              value=f'{d['percent']:,.1f}%')
-                with col2:
-                    st.metric(label='Budget Impact',
-                              value=f'{d['budget_impact']:,.0f}')
-                with col3:
-                    st.metric(label='Manpower Impact',
-                              value=f'{d['manpower_impact']:,.1f}')
+                st.metric(label='Percent',
+                          value=f'{d['percent']:,.1f}%')
+                st.metric(label='Budget Impact',
+                          value=f'{d['budget_impact']:,.0f}')
+                st.metric(label='Manpower Impact',
+                          value=f'{d['manpower_impact']:,.1f}')
                 st.divider()
                 # Delete action
                 if st.button('Delete', key=f'{d['name']}'):
@@ -299,22 +285,18 @@ def action_summary(action_type):
             elif action_type == 1:
                 # if Manpower programs
                 if d['action'] != 2:
-                    col1, col2, col3 = st.columns(3, vertical_alignment='bottom')
-                    with col1:
-                        st.metric(label='Operational Manpower',
-                                  value=f'{d['op_manpower']:,.1f}')
-                        st.metric(label='Annual Budget Impact',
-                                  value=f'{d['budget_impact']:,.0f}')
-                    with col2:
-                        st.metric(label='Administrative Manpower',
-                                  value=f'{d['admin_manpower']:,.1f}')
-                        st.metric(label='Manpower Impact',
-                                  value=f'{d['manpower_impact']:,.1f}')
-                    with col3:
-                        st.metric(label='Students',
-                                  value=f'{d['students']:,.1f}')
-                        st.metric(label='Investment',
-                                  value=f'{d['investment']:,.0f}')
+                    st.metric(label='Operational Manpower',
+                              value=f'{d['op_manpower']:,.1f}')
+                    st.metric(label='Annual Budget Impact',
+                              value=f'{d['budget_impact']:,.0f}')
+                    st.metric(label='Administrative Manpower',
+                              value=f'{d['admin_manpower']:,.1f}')
+                    st.metric(label='Manpower Impact',
+                              value=f'{d['manpower_impact']:,.1f}')
+                    st.metric(label='Students',
+                              value=f'{d['students']:,.1f}')
+                    st.metric(label='Investment',
+                              value=f'{d['investment']:,.0f}')
                     st.divider()
                     # Delete action
                     if st.button('Delete', key=f'{d['name']}'):
