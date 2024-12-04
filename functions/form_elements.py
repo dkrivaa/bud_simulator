@@ -231,7 +231,7 @@ def display_with_delete():
 
     for idx, row in st.session_state['program_df'].iterrows():
         st.subheader(f':orange[{row['Takana']}]')
-        col1, col2, col3 = st.columns(3)
+        col1, col2, col3 = st.columns(3, vertical_alignment='bottom')
         with col1:
             st.metric(label='Budget',
                       value=f'{row['Budget']:,.0f}')
