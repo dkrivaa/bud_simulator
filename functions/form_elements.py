@@ -231,15 +231,12 @@ def display_with_delete():
 
     for idx, row in st.session_state['program_df'].iterrows():
         st.subheader(f':orange[{row['Takana']}]')
-        col1, col2 = st.columns(2, vertical_alignment='bottom')
-        with col1:
-            st.metric(label='Budget',
-                      value=f'{row['Budget']:,.0f}')
-            # st.write(f'{row['Budget']:,.0f}')
-        with col2:
-            if st.button(f"Delete", key=f"delete_{idx}"):
-                delete_row(idx)
-                st.rerun()
+        st.metric(label='Budget',
+                  value=f'{row['Budget']:,.0f}')
+        # st.write(f'{row['Budget']:,.0f}')
+        if st.button(f"Delete", key=f"delete_{idx}"):
+            delete_row(idx)
+            st.rerun()
     st.divider()
     st.metric(label='Total Budget',
               value=f'{st.session_state['program_df']['Budget'].sum():,.0f}')
