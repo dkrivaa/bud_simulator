@@ -16,7 +16,7 @@ st.divider()
 # Get Excel buffer
 buffer = make_excel_budget()
 
-st.write('Download Simulator Budget as Excel')
+st.write(':orange[Download Simulator Budget as Excel]')
 st.download_button(
     label='Download Budget (Excel)',
     data=buffer,
@@ -29,7 +29,7 @@ st.divider()
 
 # Get CSV action data
 csv_data = make_csv_actions()
-st.write('Download Simulation for Future Upload (csv)')
+st.write(':orange[Download Simulation for Future Upload (csv)]')
 if csv_data:
     st.download_button(
                 label="Download Simulation (CSV)",
