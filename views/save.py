@@ -6,8 +6,8 @@ from functions.form_elements import make_excel_budget, make_csv_actions
 
 # Check that simulation has been initialized else go back to start page
 initial_check()
-# Check that there are actions
-check_actions()
+# # Check that there are actions
+# check_actions()
 
 
 st.title('Save & Download Simulation')
