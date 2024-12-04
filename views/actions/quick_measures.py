@@ -45,13 +45,10 @@ with st.container():
     # If action selected by user
     if action is not None:
         # User inputs
-        col1, col2 = st.columns(2)
-        with col1:
-            # Name
-            name = action_name()
-        with col2:
-            # Percent
-            percent = percent(action_type=0, action=action)
+        # Name
+        name = action_name()
+        # Percent
+        percent = percent(action_type=0, action=action)
 
         # Calc new df
         new_df = quick_measures_new_df(action, percent, 'add_action')
@@ -60,10 +57,8 @@ with st.container():
         manpower_imp = total_manpower(new_df) - total_manpower(st.session_state['df'])
 
         # Display impact
-        with col1:
-            budget_impact(new_df)
-        with col2:
-            manpower_impact(new_df)
+        budget_impact(new_df)
+        manpower_impact(new_df)
 
         st.divider()
 
