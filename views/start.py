@@ -74,7 +74,7 @@ selection = top_level()
 if selection is not None:
     # If selection is 'New Simulation'
     if selection == 0:
-        st.write(':orange[Define Base Budget Model (starting point)]')
+        st.write(':orange[Define Base Budget Model (Starting point)]')
         year = year_selection()
         if year:
             budget_type = budget_type(year)
