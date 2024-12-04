@@ -237,7 +237,8 @@ def display_with_delete():
         if st.button(f"Delete", key=f"delete_{idx}"):
             delete_row(idx)
             st.rerun()
-    st.divider()
+
+        st.divider()
     st.metric(label='Total Budget',
               value=f'{st.session_state['program_df']['Budget'].sum():,.0f}')
 
