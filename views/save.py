@@ -25,8 +25,11 @@ st.download_button(
     key='Excel'
     )
 
+st.divider()
+
 # Get CSV action data
 csv_data = make_csv_actions()
+st.write('Download Simulator for Future Upload (csv)')
 if csv_data:
     st.download_button(
                 label="Download Simulation (CSV)",
