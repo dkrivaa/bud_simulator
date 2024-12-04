@@ -89,7 +89,7 @@ def add_saved_actions(df_actions):
 # Page
 st.title('Upload Simulation')
 st.divider()
-file = st.file_uploader(label='Upload Saved Simulation File (csv)',
+file = st.file_uploader(label=':orange[Upload Saved Simulation File (csv)]',
                         type='csv',)
 
 if file:
