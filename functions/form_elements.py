@@ -230,7 +230,7 @@ def display_with_delete():
         st.session_state['program_df'] = st.session_state['program_df'].drop(index).reset_index(drop=True)
 
     for idx, row in st.session_state['program_df'].iterrows():
-        st.subheader(row['Takana'])
+        st.subheader(f':orange[{row['Takana']}]')
         st.metric(label='Budget',
                   value=f'{row['Budget']:,.0f}')
         # st.write(f'{row['Budget']:,.0f}')
