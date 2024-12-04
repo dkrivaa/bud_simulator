@@ -88,7 +88,7 @@ def add_saved_actions(df_actions):
 ##########################
 # Page
 st.title('Upload Simulation')
-file = st.file_uploader(label='Upload File',
+file = st.file_uploader(label='Upload Saved Simulation File (csv)',
                         type='csv',)
 
 if file:
