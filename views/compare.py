@@ -23,13 +23,9 @@ def compare_budgets(compare):
     for _, row in df_compare.iterrows():
 
         st.write(row['קוד ושם תקנה'])
-        st.write(f'Base Budget: {row['Original Budget']:,.0f}')
+        st.write(f'Model Budget: {row['Original Budget']:,.0f}')
         st.write(f'Simulation: {row['Simulation Budget']:,.0f}')
         st.divider()
-
-
-
-
 
 
 # Check that simulation has been initialized else go back to start page
