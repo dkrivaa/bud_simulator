@@ -25,11 +25,11 @@ def compare_budgets(compare):
     for _, row in df_compare.iterrows():
         col1, col2, col3 = st.columns(3)
         with col1:
-            st.write(f'0{row['קוד ושם תקנה']}')
+            st.write(row['קוד ושם תקנה'])
         with col2:
-            st.write(row['Original Budget'])
+            st.write(f'{row['Original Budget']:,.0f}')
         with col3:
-            st.write(row['Simulation Budget'])
+            st.write(f'{row['Simulation Budget']:,.0f}')
 
 
 
