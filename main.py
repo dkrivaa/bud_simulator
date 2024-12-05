@@ -45,7 +45,7 @@ wage_policies_page = st.Page(
 )
 
 budget_page = st.Page(
-    page='views/budget.py',
+    page='views/compare.py',
     title='Compare Budgets'
 )
 
