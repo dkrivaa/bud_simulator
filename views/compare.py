@@ -25,9 +25,9 @@ def compare_budgets(compare):
         with col1:
             st.write(row['קוד ושם תקנה'])
         with col2:
-            st.write(f'{row['Original Budget']:,.0f}')
+            st.write(f'Base Budget: {row['Original Budget']:,.0f}')
         with col3:
-            st.write(f'{row['Simulation Budget']:,.0f}')
+            st.write(f'Simulation: {row['Simulation Budget']:,.0f}')
 
 
 
