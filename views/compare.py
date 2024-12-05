@@ -12,7 +12,7 @@ def compare_budgets(compare):
         'Amount': 'כמות'
     }
     var = var_dict[compare]
-    df_original = st.session_state['original_df'].copy()
+    df_original = st.session_state['df_original'].copy()
     df = st.session_state['df'].copy()
     df_compare = pd.merge(df_original[['קוד תקנה', var]].rename(columns={var: 'Original Budget'}),
                           df[['קוד תקנה', var]].rename(columns={'var': 'Simulation Budget'}),
