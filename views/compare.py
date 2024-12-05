@@ -15,7 +15,7 @@ def compare_budgets(compare):
     df_original = st.session_state['df_original'].copy()
     df = st.session_state['df'].copy()
     df_compare = pd.merge(df_original[['קוד תקנה', var]].rename(columns={var: 'Original Budget'}),
-                          df[['קוד תקנה', var]].rename(columns={'var': 'Simulation Budget'}),
+                          df[['קוד תקנה', var]].rename(columns={var: 'Simulation Budget'}),
                           on=['קוד תקנה'], how='outer')
     df_compare = df_compare[(df_compare['Original Budget'].notna()) |
                             (df_compare['Original Budget'] != 0) |
