@@ -251,7 +251,7 @@ def action_summary(action_type):
     if len(action_list) == 0:
         st.write('No Actions to Show')
     for d in action_list:
-        with st.expander(f'Action - :blue[{d['name']}]'):
+        with st.expander(f'Action - :blue[{d['name']}]', False):
             # If quick measures or wage policies
             if action_type == 0 or action_type == 2:
                 st.metric(label='Percent',
