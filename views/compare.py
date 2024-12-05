@@ -17,10 +17,10 @@ def compare_budgets(compare):
     df_compare = pd.merge(df_original[['קוד תקנה', var]].rename(columns={var: 'Original Budget'}),
                           df[['קוד תקנה', var]].rename(columns={'var': 'Simulation Budget'}),
                           on=['קוד תקנה'], how='outer')
-    df_compare = df_compare[(df_compare['original_budget'].notna()) |
-                            (df_compare['original_budget'] != 0) |
-                            (df_compare['simulation_budget'].notna()) |
-                            (df_compare['simulation_budget'] != 0)]
+    df_compare = df_compare[(df_compare['Original Budget'].notna()) |
+                            (df_compare['Original Budget'] != 0) |
+                            (df_compare['Simulation Budget'].notna()) |
+                            (df_compare['Simulation Budget'] != 0)]
 
     for _, row in df_compare.iterrows():
         col1, col2, col3 = st.columns(3)
