@@ -25,7 +25,7 @@ def compare_budgets(compare):
     for _, row in df_compare.iterrows():
         col1, col2, col3 = st.columns(3)
         with col1:
-            st.write(row['קוד תקנה'])
+            st.write(f'{row['קוד תקנה']:,.0f}')
         with col2:
             st.write(row['Original Budget'])
         with col3:
