@@ -14,5 +14,5 @@ st.page_link(page='views/simulation.py', label='Back to Simulator')
 st.divider()
 
 options = ['Budget', 'Manpower', 'Other Amounts']
-tab1, tab2, tab3 = st.tabs([options])
+tab1, tab2, tab3 = st.tabs(options)
 
