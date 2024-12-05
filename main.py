@@ -44,6 +44,11 @@ wage_policies_page = st.Page(
     title='Wage Policies'
 )
 
+budget_page = st.Page(
+    page='views/budget.py',
+    title='Compare Budgets'
+)
+
 summary_page = st.Page(
     page='views/actions/summary.py',
     title='Actions Summary'
@@ -51,9 +56,10 @@ summary_page = st.Page(
 
 
 pages = {
-      'Main': [start_page, simulation_page, upload_page],
-      'Actions': [quick_measures_page, programs_page, wage_policies_page, summary_page],
-      'Save / Download': [save_page, ]
+  'Main': [start_page, simulation_page, upload_page],
+  'Actions': [quick_measures_page, programs_page, wage_policies_page, summary_page],
+   'Compare Budgets': [budget_page],
+  'Save / Download': [save_page, ]
 }
 
 
